@@ -1,0 +1,3 @@
+/home/arycra07/Desktop/complier-lab/syntax-paser/build/CMakeFiles/main.dir
+/home/arycra07/Desktop/complier-lab/syntax-paser/build/CMakeFiles/edit_cache.dir
+/home/arycra07/Desktop/complier-lab/syntax-paser/build/CMakeFiles/rebuild_cache.dir
