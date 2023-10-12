@@ -1,3 +1,0 @@
-/home/arycra07/Desktop/complier-lab/lex-parser/build/CMakeFiles/LexParser.dir
-/home/arycra07/Desktop/complier-lab/lex-parser/build/CMakeFiles/edit_cache.dir
-/home/arycra07/Desktop/complier-lab/lex-parser/build/CMakeFiles/rebuild_cache.dir
