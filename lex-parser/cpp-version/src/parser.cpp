@@ -758,8 +758,9 @@ string parser::parseFile()
             state = states::char_start;
             break;
         case states::error_state:
-            parser::out << "error state" << endl
-                        << (int)C << endl
+            parser::out << "error state"
+                        << "\t"
+                        << (int)C << "\t"
                         << token << endl;
             state = states::begin;
             errorCount++;
@@ -894,10 +895,10 @@ word parser::return_id(wordClass id, char *charArray, location loc)
     tmp.sign = id;
     tmp.attribute_char = string(charArray);
     wordCount[(int)id]++;
-    parser::out << "[Location]:  " << loc.filename << "/" << loc.line << ":" << loc.col << endl;
+    parser::out << "[Location]:  " << loc.filename << "/" << loc.line << ":" << loc.col << "\t";
     parser::printClass(id);
-    parser::out << "[Value]:     "
-                << tmp.attribute_char << endl
+    parser::out << "[Value]: "
+                << tmp.attribute_char << "\t"
                 << endl;
     return tmp;
 }
@@ -909,10 +910,10 @@ word parser::return_id(wordClass id, double digit, location loc)
     tmp.sign = id;
     tmp.attribute_digit = digit;
     wordCount[(int)id]++;
-    parser::out << "[Location]:  " << loc.filename << "/" << loc.line << ":" << loc.col << endl;
+    parser::out << "[Location]:  " << loc.filename << "/" << loc.line << ":" << loc.col << "\t";
     parser::printClass(id);
-    parser::out << "[Value]:     "
-                << tmp.attribute_digit << endl
+    parser::out << "[Value]: "
+                << tmp.attribute_digit << "\t"
                 << endl;
     return tmp;
 }
@@ -924,10 +925,10 @@ word parser::return_id(wordClass id, long long number, location loc)
     tmp.sign = id;
     tmp.attribute_num = number;
     wordCount[(int)id]++;
-    parser::out << "[Location]:  " << loc.filename << "/" << loc.line << ":" << loc.col << endl;
+    parser::out << "[Location]:  " << loc.filename << "/" << loc.line << ":" << loc.col << "\t";
     parser::printClass(id);
-    parser::out << "[Value]:     "
-                << tmp.attribute_num << endl
+    parser::out << "[Value]: "
+                << tmp.attribute_num << "\t"
                 << endl;
     return tmp;
 }
@@ -939,10 +940,10 @@ word parser::return_id(wordClass id, const char charArray[], location loc)
     tmp.sign = id;
     tmp.attribute_char = string(charArray);
     wordCount[(int)id]++;
-    parser::out << "[Location]:  " << loc.filename << "/" << loc.line << ":" << loc.col << endl;
+    parser::out << "[Location]:  " << loc.filename << "/" << loc.line << ":" << loc.col << "\t";
     parser::printClass(id);
-    parser::out << "[Value]:     "
-                << tmp.attribute_char << endl
+    parser::out << "[Value]: "
+                << tmp.attribute_char << "\t"
                 << endl;
     return tmp;
 }
@@ -951,43 +952,52 @@ word parser::return_id(wordClass id, const char charArray[], location loc)
 void parser::printClass(wordClass id)
 {
 
-    parser::out << "[Type]:      ";
+    parser::out << "[Type]: ";
     switch (id)
     {
     case wordClass::id:
-        parser::out << "id" << endl;
+        parser::out << "id       "
+                    << "\t";
         break;
 
     case wordClass::digit:
-        parser::out << "digit" << endl;
+        parser::out << "digit    "
+                    << "\t";
         break;
 
     case wordClass::number:
-        parser::out << "number" << endl;
+        parser::out << "number   "
+                    << "\t";
         break;
 
     case wordClass::myChar:
-        parser::out << "char" << endl;
+        parser::out << "char     "
+                    << "\t";
         break;
 
     case wordClass::string:
-        parser::out << "string" << endl;
+        parser::out << "string   "
+                    << "\t";
         break;
 
     case wordClass::operater:
-        parser::out << "operater" << endl;
+        parser::out << "operater "
+                    << "\t";
         break;
 
     case wordClass::delimiter:
-        parser::out << "delimiter" << endl;
+        parser::out << "delimiter"
+                    << "\t";
         break;
 
     case wordClass::keyword:
-        parser::out << "keyword" << endl;
+        parser::out << "keyword  "
+                    << "\t";
         break;
 
     default:
-        parser::out << "error" << endl;
+        parser::out << "error    "
+                    << "\t";
         break;
     }
 }

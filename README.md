@@ -4,7 +4,7 @@
 
 ![](_img/lab1.png)
 
-实验采用方法 1， cpp 实现
+实验采用 cpp 和 lex 两个版本实现
 
 ## Syntax Parse
 
