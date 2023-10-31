@@ -130,7 +130,6 @@ void procF()
     else if (number(token))
     {
         get_token();
-        get_token();
         cout << "[" << step++ << "] F -> nums" << endl;
     }
     else
