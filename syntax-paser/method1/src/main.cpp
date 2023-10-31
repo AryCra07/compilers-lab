@@ -14,6 +14,6 @@ int main()
          << endl;
     get_token();
     procE();
-    cout << "[Result] Accept!!" << endl;
+    cout << "[Result] Accept!" << endl;
     return 0;
 }
